@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>राजस्थानी विवाह निमंत्रण - Rajasthani Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800&family=Cinzel:wght@400;500;600;700&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(214, 48, 49, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(214, 48, 49, 0.6); }
+        }
+
+        @keyframes rajasthaniDance {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(2deg) scale(1.05); }
+            50% { transform: rotate(0deg) scale(1.1); }
+            75% { transform: rotate(-2deg) scale(1.05); }
+        }
+
+        @keyframes camelWalk {
+            0%, 100% { transform: translateX(0px) translateY(0px); }
+            25% { transform: translateX(5px) translateY(-3px); }
+            50% { transform: translateX(10px) translateY(0px); }
+            75% { transform: translateX(5px) translateY(3px); }
+        }
+
+        @keyframes desertWind {
+            0% { transform: translateX(-100vw) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateX(100vw) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes mandalaRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        body {
+            font-family: 'Kalam', 'Noto Sans Devanagari', 'Cinzel', serif;
+            background: 
+                linear-gradient(45deg, #8B4513 0%, #DAA520 25%, #DC143C 50%, #8B4513 75%, #DAA520 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="traditional" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="3" fill="%23FFD700" opacity="0.1"/><path d="M15 15 L25 15 L20 25 Z" fill="%23DC143C" opacity="0.05"/><rect x="18" y="18" width="4" height="4" fill="%23FF6347" opacity="0.08"/></pattern></defs><rect width="200" height="200" fill="url(%23traditional)"/></svg>') repeat;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .wedding-card {
+            max-width: 800px;
+            background: 
+                linear-gradient(145deg, #FFFEF7, #FFF8DC),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="ornate" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23DAA520" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23ornate)"/></svg>');
+            border-radius: 15px;
+            box-shadow: 
+                0 20px 40px rgba(139, 69, 19, 0.4),
+                0 10px 20px rgba(218, 165, 32, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+            border: 12px solid;
+            border-image: linear-gradient(45deg, #8B4513, #DAA520, #DC143C, #8B4513) 1;
+        }
+
+        .wedding-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 15% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 85% 75%, rgba(220, 20, 60, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 50% 50%, rgba(255, 140, 0, 0.05) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .card-border {
+            border: 8px double;
+            border-color: #8B4513;
+            margin: 15px;
+            border-radius: 10px;
+            padding: 30px;
+            background: 
+                linear-gradient(135deg, #FFFEF7 0%, #FFF8DC 50%, #FFFEF7 100%);
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-border::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: linear-gradient(45deg, #8B4513, #DAA520, #DC143C, #8B4513);
+            border-radius: 14px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .card-border::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid #DAA520;
+            border-radius: 8px;
+            opacity: 0.5;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .ganesh-symbol {
+            font-size: 48px;
+            color: #8B4513;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+            position: relative;
+            font-family: 'Kalam', serif;
+        }
+
+        .ganesh-symbol::before,
+        .ganesh-symbol::after {
+            content: '✦';
+            position: absolute;
+            font-size: 16px;
+            color: #DAA520;
+            top: -5px;
+        }
+
+        .ganesh-symbol::before {
+            left: -25px;
+        }
+
+        .ganesh-symbol::after {
+            right: -25px;
+        }
+
+        .ganesh-mantra {
+            font-size: 18px;
+            color: #8B4513;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-weight: 500;
+            text-align: center;
+            font-family: 'Kalam', serif;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .invitation-title {
+            font-size: 28px;
+            color: #8B4513;
+            font-weight: 700;
+            margin: 25px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+            display: inline-block;
+            font-family: 'Kalam', serif;
+            border: 3px double #DAA520;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #FFF8DC, #FFFACD);
+        }
+
+        .invitation-title::before,
+        .invitation-title::after {
+            content: '❋';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #DC143C;
+        }
+
+        .invitation-title::before {
+            left: -35px;
+        }
+
+        .invitation-title::after {
+            right: -35px;
+        }
+
+        .couple-section {
+            background: 
+                linear-gradient(135deg, #FFF8DC, #FFFACD),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="floral" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="2" fill="%23DAA520" opacity="0.1"/></pattern></defs><rect width="60" height="60" fill="url(%23floral)"/></svg>');
+            padding: 30px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 4px double #8B4513;
+            position: relative;
+            box-shadow: 
+                0 10px 20px rgba(139, 69, 19, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+
+        .couple-section::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border: 1px solid #DAA520;
+            border-radius: 8px;
+            opacity: 0.6;
+        }
+
+        .groom-bride {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            position: relative;
+        }
+
+        .person-details {
+            flex: 1;
+            text-align: center;
+            min-width: 320px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .person-details:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .person-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #8B4513;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            position: relative;
+            font-family: 'Kalam', serif;
+            text-align: center;
+            border-bottom: 2px solid #DAA520;
+            padding-bottom: 8px;
+        }
+
+        .person-name::after {
+            content: '✦';
+            position: absolute;
+            top: -5px;
+            right: -20px;
+            font-size: 14px;
+            color: #DC143C;
+        }
+
+        .parent-details {
+            font-size: 17px;
+            color: #636e72;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .address {
+            font-size: 15px;
+            color: #0984e3;
+            font-weight: 600;
+            background: rgba(116, 185, 255, 0.1);
+            padding: 8px 12px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .with-text {
+            font-size: 32px;
+            color: #8B4513;
+            font-weight: 700;
+            text-align: center;
+            margin: 25px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+            font-family: 'Kalam', serif;
+            background: linear-gradient(135deg, #FFF8DC, #FFFACD);
+            border: 2px solid #DAA520;
+            border-radius: 50px;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        .with-text::before,
+        .with-text::after {
+            content: '❋';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #DC143C;
+        }
+
+        .with-text::before {
+            left: -30px;
+        }
+
+        .with-text::after {
+            right: -30px;
+        }
+
+        .blessing-text {
+            text-align: center;
+            font-size: 20px;
+            color: #2d3436;
+            line-height: 2;
+            margin: 30px 0;
+            padding: 30px;
+            background: 
+                linear-gradient(135deg, rgba(248, 249, 250, 0.9), rgba(255, 255, 255, 0.9)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><pattern id="blessings" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><text x="10" y="15" text-anchor="middle" fill="%23d63031" opacity="0.05" font-size="12">🙏</text></pattern></defs><rect width="40" height="40" fill="url(%23blessings)"/></svg>');
+            border-radius: 15px;
+            border: 2px solid;
+            border-image: linear-gradient(45deg, #d63031, #e17055, #fdcb6e) 1;
+            box-shadow: 
+                0 8px 25px rgba(214, 48, 49, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            position: relative;
+        }
+
+        .blessing-text::before {
+            content: '🌺';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fffef7;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 20px;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .family-section {
+            margin: 30px 0;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #d63031;
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #ffeaa7;
+            border-radius: 8px;
+        }
+
+        .family-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            border: 3px double #8B4513;
+            background: #FFFEF7;
+        }
+
+        .family-table th {
+            background: linear-gradient(135deg, #8B4513, #DAA520);
+            color: white;
+            padding: 12px 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            border: 1px solid #654321;
+            font-family: 'Kalam', serif;
+        }
+
+        .family-table td {
+            padding: 10px 8px;
+            text-align: center;
+            border: 1px solid #DAA520;
+            line-height: 1.5;
+            background: #FFFEF7;
+            font-family: 'Kalam', serif;
+            color: #654321;
+        }
+
+        .family-table tr:nth-child(even) td {
+            background: #FFF8DC;
+        }
+
+        .family-table tr:hover td {
+            background: #FFFACD;
+        }
+
+        .decorative-line {
+            height: 3px;
+            background: linear-gradient(90deg, #8B4513, #DAA520, #DC143C, #8B4513);
+            margin: 20px 0;
+            border-radius: 2px;
+            position: relative;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .decorative-line::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 7px;
+            background: #DAA520;
+            border-radius: 10px;
+        }
+
+        .footer-blessing {
+            text-align: center;
+            font-size: 16px;
+            color: #654321;
+            font-style: italic;
+            margin-top: 25px;
+            padding: 20px;
+            background: 
+                linear-gradient(135deg, #FFF8DC, #FFFACD);
+            border-radius: 10px;
+            box-shadow: 
+                0 5px 15px rgba(139, 69, 19, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            position: relative;
+            border: 3px double #8B4513;
+            font-family: 'Kalam', serif;
+        }
+
+        .footer-blessing::before {
+            content: '🕉️';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FFF8DC;
+            padding: 4px 8px;
+            border-radius: 50%;
+            font-size: 16px;
+            border: 1px solid #8B4513;
+        }
+
+        @media (max-width: 768px) {
+            .wedding-card {
+                margin: 10px;
+            }
+            
+            .card-border {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .groom-bride {
+                flex-direction: column;
+            }
+            
+            .person-details {
+                min-width: auto;
+            }
+            
+            .ganesh-mantra {
+                font-size: 16px;
+            }
+            
+            .invitation-title {
+                font-size: 24px;
+            }
+            
+            .family-table {
+                font-size: 12px;
+            }
+            
+            .family-table th,
+            .family-table td {
+                padding: 8px 4px;
+            }
+        }
+
+        /* Additional enhancements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .floating-flower {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0.7;
+            animation: desertWind 20s infinite linear;
+        }
+
+        .floating-flower:nth-child(1) { left: 5%; animation-delay: 0s; }
+        .floating-flower:nth-child(2) { left: 15%; animation-delay: 4s; }
+        .floating-flower:nth-child(3) { left: 25%; animation-delay: 8s; }
+        .floating-flower:nth-child(4) { left: 35%; animation-delay: 12s; }
+        .floating-flower:nth-child(5) { left: 45%; animation-delay: 16s; }
+        .floating-flower:nth-child(6) { left: 55%; animation-delay: 3s; }
+        .floating-flower:nth-child(7) { left: 65%; animation-delay: 7s; }
+        .floating-flower:nth-child(8) { left: 75%; animation-delay: 11s; }
+        .floating-flower:nth-child(9) { left: 85%; animation-delay: 15s; }
+        .floating-flower:nth-child(10) { left: 95%; animation-delay: 19s; }
+
+        .music-note {
+            position: absolute;
+            font-size: 18px;
+            color: #DC143C;
+            opacity: 0.5;
+            animation: rajasthaniDance 6s infinite ease-in-out;
+        }
+
+        .music-note:nth-child(11) { top: 15%; left: 8%; animation-delay: 0s; }
+        .music-note:nth-child(12) { top: 25%; right: 8%; animation-delay: 2s; }
+        .music-note:nth-child(13) { top: 65%; left: 6%; animation-delay: 4s; }
+        .music-note:nth-child(14) { top: 75%; right: 6%; animation-delay: 6s; }
+
+        .card-border:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+
+        .invitation-title:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Enhanced responsive design */
+        @media (max-width: 768px) {
+            .wedding-card {
+                margin: 10px;
+            }
+            
+            .card-border {
+                margin: 10px;
+                padding: 20px;
+                border-width: 8px;
+            }
+            
+            .groom-bride {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .person-details {
+                min-width: auto;
+                padding: 15px;
+            }
+            
+            .ganesh-symbol {
+                font-size: 42px;
+            }
+            
+            .ganesh-mantra {
+                font-size: 16px;
+            }
+            
+            .invitation-title {
+                font-size: 24px;
+            }
+            
+            .invitation-title::before,
+            .invitation-title::after {
+                display: none;
+            }
+            
+            .with-text {
+                font-size: 28px;
+            }
+            
+            .with-text::before,
+            .with-text::after {
+                display: none;
+            }
+            
+            .person-name {
+                font-size: 22px;
+            }
+            
+            .family-table {
+                font-size: 12px;
+            }
+            
+            .family-table th,
+            .family-table td {
+                padding: 8px 4px;
+            }
+            
+            .blessing-text {
+                font-size: 16px;
+                padding: 20px;
+            }
+            
+            .footer-blessing {
+                font-size: 16px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card-border {
+                margin: 5px;
+                padding: 15px;
+                border-width: 6px;
+            }
+            
+            .ganesh-symbol {
+                font-size: 36px;
+            }
+            
+            .ganesh-mantra {
+                font-size: 14px;
+            }
+            
+            .invitation-title {
+                font-size: 20px;
+            }
+            
+            .person-name {
+                font-size: 18px;
+            }
+            
+            .with-text {
+                font-size: 24px;
+            }
+            
+            .family-table {
+                font-size: 10px;
+            }
+            
+            .family-table th,
+            .family-table td {
+                padding: 6px 2px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white !important;
+                padding: 0;
+            }
+            
+            .wedding-card {
+                box-shadow: none;
+                max-width: none;
+                animation: none;
+            }
+            
+            .card-border {
+                animation: none;
+                border: 4px solid #d63031 !important;
+                border-image: none !important;
+            }
+            
+            .floating-elements,
+            .music-note {
+                display: none;
+            }
+            
+            .ganesh-symbol::before,
+            .ganesh-symbol::after,
+            .invitation-title::before,
+            .invitation-title::after,
+            .with-text::before,
+            .with-text::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-flower">🌺</div>
+        <div class="floating-flower">🏺</div>
+        <div class="floating-flower">🐪</div>
+        <div class="floating-flower">🦚</div>
+        <div class="floating-flower">🐘</div>
+        <div class="floating-flower">🌸</div>
+        <div class="floating-flower">🪔</div>
+        <div class="floating-flower">🎭</div>
+        <div class="floating-flower">🥻</div>
+        <div class="floating-flower">💍</div>
+        
+        <div class="music-note">🎵</div>
+        <div class="music-note">🥁</div>
+        <div class="music-note">🎺</div>
+        <div class="music-note">🎶</div>
+    </div>
+    
+    <div class="wedding-card">
+        <div class="card-border">
+            <div class="header">
+                <div class="ganesh-symbol">✦✦✦ !! श्री गणेशाय नमः !! ✦✦✦</div>
+                <div class="ganesh-mantra">
+                    वक्रतुण्ड महाकाय, सूर्यकोटि समप्रभः ।<br>
+                    निर्विघ्नं कुरु मे देवः, सर्वकार्येषु सर्वदा ।।
+                </div>
+                <div class="decorative-line"></div>
+                <p style="font-size: 18px; color: #636e72; margin: 15px 0;">स्नेहिल स्वजन,</p>
+                <p style="font-size: 16px; color: #2d3436; margin: 10px 0;">
+                    परमपिता परमेश्वर एवं जोड़ने वाले हनुमान जी महाराज की असीम अनुकम्पा से
+                </p>
+                <div class="invitation-title">🕉 हमारे यहाँ पावन परिणय-संस्कार 🕉</div>
+            </div>
+
+            <div class="couple-section">
+                <div class="groom-bride">
+                    <div class="person-details">
+                        <div class="person-name">चि. विपुल कृष्ण मथुरिया</div>
+                        <div class="parent-details">
+                            (सुपुत्र: श्रीमती भूली देवी – स्व. श्री लड्डु लाल जी मथुरिया<br>
+                            एवं श्रीमती श्यामा देवी – श्री गोविन्द नारायण जी मथुरिया)
+                        </div>
+                        <div class="address">निवासी: शुक्ला कॉलोनी, खण्डार (राजस्थान)</div>
+                    </div>
+                    
+                    <div class="with-text">के साथ</div>
+                    
+                    <div class="person-details">
+                        <div class="person-name">सौ.का. ओमप्रभा (महिमा)</div>
+                        <div class="parent-details">
+                            (सुपुत्री: श्रीमती रामरती – स्व. श्री मायाराम जी गुप्ता (रजौधा वाले)<br>
+                            एवं श्रीमती प्रेमलता – श्री अनिल कुमार गुप्ता)
+                        </div>
+                        <div class="address">निवासी: सिंधु आदर्श कॉलोनी, हेमसिंह की परेड, ग्वालियर (म.प्र.)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blessing-text">
+                इस मधुर बेला पर आपकी पावन उपस्थिति एवं शुभाशीष की सादर आकांक्षा है।<br>
+                कृपया पधारकर नवयुगल को आशीर्वाद प्रदान कर अनुग्रहित करें।
+            </div>
+
+            <div class="decorative-line"></div>
+
+            <div class="family-section">
+                <table class="family-table">
+                    <thead>
+                        <tr>
+                            <th>ननिहाल पक्ष</th>
+                            <th>विशेष आग्रह</th>
+                            <th>स्वागतकर्ता</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>कपूरी देवी – स्व. धूड़ी लाल जी</td>
+                            <td>द्रोपदी देवी – शम्भूदयाल जी</td>
+                            <td>स्व. रुकमणी देवी – गजानन्द जी</td>
+                        </tr>
+                        <tr>
+                            <td>सरिता देवी – राजेश जी</td>
+                            <td>सुशीला देवी – जगदीश प्रसाद जी</td>
+                            <td>रामपति देवी – जगदीश जी</td>
+                        </tr>
+                        <tr>
+                            <td>भारती, मोहित</td>
+                            <td>संतोष देवी – नारायण मथुरिया</td>
+                            <td>द्रोपदी देवी – प्रकाश जी</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>कृष्णा देवी – बृजेश जी</td>
+                            <td>रामकिशोरी देवी – गिर्राज जी</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>शैली देवी – विष्णु जी</td>
+                            <td>कमलेश देवी – कुंजर बिहारी जी</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>ऋतु देवी – चन्द्रशेखर जी</td>
+                            <td>श्यामा देवी – पवन जी</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>दीपिका देवी – मनीष जी</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="decorative-line"></div>
+
+            <div class="family-section">
+                <table class="family-table">
+                    <thead>
+                        <tr>
+                            <th>विनीत</th>
+                            <th>दर्शनाभिलाषी</th>
+                            <th>बाल मनुहार</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>गोविन्द नारायण जी मथुरिया</td>
+                            <td>रामस्वरूप, प्रहलाद, मुरारी</td>
+                            <td>रुद्रांश</td>
+                        </tr>
+                        <tr>
+                            <td>(अक्षयगढ़), प्रयागराज (Eng.),</td>
+                            <td>ओमप्रकाश, मदन, रामावतार</td>
+                            <td>चिन्मय</td>
+                        </tr>
+                        <tr>
+                            <td>हर्षिता</td>
+                            <td>खेमराज, पैतिया परिवार</td>
+                            <td>राम</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>(अक्षयगढ़)</td>
+                            <td>परी</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="footer-blessing">
+                🙏 सादर आमंत्रण 🙏<br>
+                आपकी उपस्थिति से यह शुभ अवसर और भी मंगलमय हो जाएगा
+            </div>
+        </div>
+    </div>
+</body>
+</html>
