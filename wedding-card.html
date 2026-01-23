@@ -116,14 +116,12 @@
             color: #5a4a3a;
             position: relative;
             overflow: hidden;
-            border: 20px solid transparent;
-            border-image: linear-gradient(135deg, #d4af37, #ff9933, #d4af37, #ff6600, #d4af37) 1;
+            border: 15px solid transparent;
+            border-image: linear-gradient(135deg, #d4af37, #ff9933, #d4af37) 1;
             box-shadow: 
-                inset 0 0 0 8px #f5f0e8,
-                inset 0 0 0 12px #d4af37,
-                inset 0 0 0 16px #f5f0e8,
-                inset 0 0 0 18px #ff9933,
-                inset 0 0 30px rgba(212, 175, 55, 0.3);
+                inset 0 0 0 5px #f5f0e8,
+                inset 0 0 0 8px #d4af37,
+                inset 0 0 20px rgba(212, 175, 55, 0.2);
         }
 
         .hero::before {
@@ -150,6 +148,7 @@
             height: 150px;
             z-index: 3;
             pointer-events: none;
+            transition: all 0.3s ease;
         }
 
         .ganesh-name {
@@ -163,6 +162,7 @@
             font-weight: 500;
             text-align: center;
             margin: 0 auto;
+            transition: all 0.3s ease;
         }
 
         .ganesh-image {
@@ -225,22 +225,6 @@
         .ganesh-decoration:nth-child(2) { top: 50%; left: -10px; transform: translateY(-50%); }
         .ganesh-decoration:nth-child(3) { top: 50%; right: -10px; transform: translateY(-50%); }
 
-        /* Decorative Corner Ornaments */
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 30px;
-            left: 30px;
-            right: 30px;
-            bottom: 30px;
-            border: 3px solid rgba(212, 175, 55, 0.4);
-            border-radius: 20px;
-            pointer-events: none;
-            z-index: 1;
-            box-shadow: 
-                0 0 20px rgba(212, 175, 55, 0.2),
-                inset 0 0 20px rgba(212, 175, 55, 0.1);
-        }
 
         .corner-ornament {
             position: absolute;
@@ -248,6 +232,7 @@
             height: 120px;
             z-index: 3;
             pointer-events: none;
+            transition: opacity 0.3s ease;
         }
 
         .corner-ornament svg {
@@ -279,23 +264,19 @@
             transform: rotate(180deg);
         }
 
-        /* Border Pattern Animation */
+        /* Border Pattern Animation - Simplified */
         @keyframes borderGlow {
             0%, 100% {
                 box-shadow: 
-                    inset 0 0 0 8px #f5f0e8,
-                    inset 0 0 0 12px #d4af37,
-                    inset 0 0 0 16px #f5f0e8,
-                    inset 0 0 0 18px #ff9933,
-                    inset 0 0 30px rgba(212, 175, 55, 0.3);
+                    inset 0 0 0 5px #f5f0e8,
+                    inset 0 0 0 8px #d4af37,
+                    inset 0 0 20px rgba(212, 175, 55, 0.2);
             }
             50% {
                 box-shadow: 
-                    inset 0 0 0 8px #f5f0e8,
-                    inset 0 0 0 12px #ff9933,
-                    inset 0 0 0 16px #f5f0e8,
-                    inset 0 0 0 18px #d4af37,
-                    inset 0 0 40px rgba(255, 153, 51, 0.4);
+                    inset 0 0 0 5px #f5f0e8,
+                    inset 0 0 0 8px #ff9933,
+                    inset 0 0 25px rgba(255, 153, 51, 0.3);
             }
         }
 
@@ -331,6 +312,7 @@
             opacity: 0.7;
             filter: drop-shadow(2px 2px 4px rgba(139, 115, 85, 0.3));
             animation: swayBow 4s ease-in-out infinite;
+            transition: opacity 0.3s ease;
         }
 
         @keyframes swayBow {
@@ -376,6 +358,7 @@
             opacity: 0.4;
             animation: rotate 60s linear infinite;
             pointer-events: none;
+            transition: all 0.3s ease;
         }
 
         .mandala-top {
@@ -407,6 +390,7 @@
             height: 200px;
             opacity: 0.2;
             pointer-events: none;
+            transition: opacity 0.3s ease;
         }
 
         .rangoli-left {
@@ -495,6 +479,7 @@
             position: absolute;
             z-index: 3;
             pointer-events: none;
+            transition: opacity 0.3s ease;
         }
 
         .garland-border-top {
@@ -994,24 +979,99 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            /* Hide complex garland borders on mobile */
+            .garland-border-top,
+            .garland-border-bottom,
+            .garland-border-left,
+            .garland-border-right {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            /* Hide corner ornaments on mobile */
+            .corner-ornament {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            /* Simplify hero border on mobile */
+            .hero {
+                border: 8px solid transparent;
+                border-image: linear-gradient(135deg, #d4af37, #ff9933, #d4af37) 1;
+                box-shadow: 
+                    inset 0 0 0 3px #f5f0e8,
+                    inset 0 0 0 5px #d4af37,
+                    inset 0 0 10px rgba(212, 175, 55, 0.15);
+            }
+
+            /* Adjust Ganesh frame for mobile */
+            .ganesh-frame {
+                width: 120px;
+                height: 120px;
+                top: 8%;
+            }
+
+            .ganesh-name {
+                top: calc(8% + 135px);
+                font-size: 1.1em;
+            }
+
+            /* Reduce mandala size on mobile */
+            .mandala-decoration {
+                width: 250px;
+                height: 250px;
+                opacity: 0.25;
+            }
+
+            .mandala-top {
+                top: 35%;
+            }
+
+            /* Hide ribbon bows on mobile */
+            .ribbon-bow {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            /* Hide rangoli patterns on mobile */
+            .rangoli-pattern {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            /* Adjust hero content spacing */
+            .hero-content {
+                margin-top: 0;
+                transition: margin-top 0.3s ease;
+            }
+
+            .hero-content > div:first-child {
+                margin-top: 180px !important;
+                transition: margin-top 0.3s ease;
+            }
+
             .hero h1 {
                 font-size: 2em;
             }
 
             .couple-names {
-                font-size: 1.8em;
+                font-size: 1.6em;
             }
 
-        .wedding-date {
-            font-size: 1.8em;
-            margin: 20px 0;
-            padding: 20px 40px;
-            background: rgba(255,255,255,0.6);
-            border-radius: 50px;
-            backdrop-filter: blur(10px);
-            color: #8b7355;
-            border: 2px solid rgba(212, 175, 55, 0.3);
-        }
+            .wedding-date {
+                font-size: 1.3em;
+                margin: 20px 10px;
+                padding: 20px 30px;
+                background: rgba(255,255,255,0.6);
+                border-radius: 15px;
+                backdrop-filter: blur(10px);
+                color: #8b7355;
+                border: 2px solid rgba(212, 175, 55, 0.3);
+            }
+
+            .date-decoration {
+                font-size: 1.5em;
+            }
 
             .countdown-item {
                 min-width: 80px;
