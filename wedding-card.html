@@ -305,25 +305,20 @@
             transform: scaleX(-1); /* Mirror the right side */
         }
 
-        /* Ribbon bows */
-        .ribbon-bow {
-            position: absolute;
-            font-size: 3em;
-            opacity: 0.7;
-            filter: drop-shadow(2px 2px 4px rgba(139, 115, 85, 0.3));
+        /* Ribbon bows for sang text */
+        .sang-ribbon {
+            display: inline-block;
+            font-size: 0.6em;
+            margin: 0 10px;
+            opacity: 0.8;
+            filter: drop-shadow(1px 1px 2px rgba(139, 115, 85, 0.3));
             animation: swayBow 4s ease-in-out infinite;
-            transition: opacity 0.3s ease;
         }
 
         @keyframes swayBow {
             0%, 100% { transform: rotate(-5deg); }
             50% { transform: rotate(5deg); }
         }
-
-        .ribbon-bow-top-left { top: 8%; left: 15%; }
-        .ribbon-bow-top-right { top: 8%; right: 15%; }
-        .ribbon-bow-bottom-left { bottom: 8%; left: 15%; }
-        .ribbon-bow-bottom-right { bottom: 8%; right: 15%; }
 
         /* Leaves and vines */
         .vine-element {
@@ -438,7 +433,7 @@
 
         .wedding-date {
             font-size: 1.8em;
-            margin: 20px 0;
+            margin: 15px 0 40px;
             padding: 30px 50px;
             background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
             border-radius: 20px;
@@ -663,27 +658,60 @@
             position: relative;
         }
 
+        .section-title::before {
+            content: '✦';
+            display: inline-block;
+            margin-right: 20px;
+            font-size: 0.8em;
+            color: #d4af37;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
         .section-title::after {
-            content: '';
+            content: '✦';
+            display: inline-block;
+            margin-left: 20px;
+            font-size: 0.8em;
+            color: #d4af37;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .section-title-underline {
             display: block;
-            width: 100px;
+            width: 150px;
             height: 4px;
             background: linear-gradient(to right, #ff9933, #ff6600);
-            margin: 20px auto;
+            margin: 5px auto 30px;
             border-radius: 2px;
+            position: relative;
+        }
+
+        .section-title-underline::before {
+            content: '◆';
+            position: absolute;
+            left: -30px;
+            top: -8px;
+            color: #d4af37;
+            font-size: 1.2em;
+        }
+
+        .section-title-underline::after {
+            content: '◆';
+            position: absolute;
+            right: -30px;
+            top: -8px;
+            color: #d4af37;
+            font-size: 1.2em;
         }
 
         /* Gallery Section */
         .gallery-section {
             background: white;
             padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .gallery-swiper {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
 
         .gallery-card {
             background: #ffffff;
@@ -760,7 +788,10 @@
         /* Couple Section */
         .couple-section {
             background: white;
+            position: relative;
+            overflow: hidden;
         }
+
 
         .couple-cards {
             display: grid;
@@ -882,7 +913,10 @@
         /* Venue Section */
         .venue-section {
             background: white;
+            position: relative;
+            overflow: hidden;
         }
+
 
         .venue-cards {
             display: grid;
@@ -916,7 +950,7 @@
 
         .family-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(5, 1fr);
             gap: 30px;
         }
 
@@ -1027,11 +1061,6 @@
                 top: 35%;
             }
 
-            /* Hide ribbon bows on mobile */
-            .ribbon-bow {
-                opacity: 0;
-                visibility: hidden;
-            }
 
             /* Hide rangoli patterns on mobile */
             .rangoli-pattern {
@@ -1098,6 +1127,11 @@
 
             .timeline-dot {
                 left: 20px;
+            }
+
+            /* Family grid mobile - stack vertically */
+            .family-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -2073,11 +2107,6 @@
             </svg>
         </div>
 
-        <!-- Ribbon Bows -->
-        <div class="ribbon-bow ribbon-bow-top-left">🎀</div>
-        <div class="ribbon-bow ribbon-bow-top-right">🎀</div>
-        <div class="ribbon-bow ribbon-bow-bottom-left">🎀</div>
-        <div class="ribbon-bow ribbon-bow-bottom-right">🎀</div>
 
 
 
@@ -2160,14 +2189,16 @@
                 <circle cx="150" cy="150" r="4" fill="#ff9933" opacity="0.7"/>
             </svg>
 
-            <div style="margin-top: 260px;"></div>
+            <div style="margin-top: 300px;"></div>
             <h1 data-aos="fade-up" data-aos-delay="600">विवाह निमंत्रण</h1>
             <div class="couple-names" data-aos="fade-up" data-aos-delay="800">
                 आयुष्मान विपुल कृष्ण<br>
-                <span style="font-size: 0.7em; opacity: 0.9;">संग</span><br>
+                <span style="font-size: 0.7em; opacity: 0.9;">
+                    <span class="sang-ribbon">🎀</span>संग<span class="sang-ribbon">🎀</span>
+                </span><br>
                 आयुष्मति ओमप्रभा (महिमा)
             </div>
-            <div style="font-size: 1.5em; margin: 30px 0; min-height: 60px; font-weight: 500; opacity: 0.95;" data-aos="fade-up" data-aos-delay="1000">
+            <div style="font-size: 1.5em; margin: 20px 0; min-height: 60px; font-weight: 500; opacity: 0.95;" data-aos="fade-up" data-aos-delay="1000">
                 <span id="typed-message"></span>
             </div>
             <div class="wedding-date" data-aos="zoom-in" data-aos-delay="1200">
@@ -2244,9 +2275,6 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
-        <p style="text-align: center; margin-top: 30px; color: #666; font-size: 0.9em;">
-            💡 <strong>नोट:</strong> अपनी फोटो जोड़ने के लिए, gallery-placeholder को img टैग से बदलें
-        </p>
     </section>
 
     <!-- Couple Section -->
@@ -2255,7 +2283,7 @@
         <div class="couple-cards">
             <div class="couple-card" data-aos="fade-right">
                 <h3>आयुष्मान विपुल कृष्ण</h3>
-                <p><strong>सुपौत्र:</strong> श्रीमती भरूली देवी एवं स्व. श्री लड्डूलाल जी मथुरिया</p>
+                <p><strong>सुपौत्र:</strong> श्रीमती भूली देवी एवं स्व. श्री लड्डूलाल जी मथुरिया</p>
                 <p><strong>सुपुत्र:</strong> श्रीमती श्यामा देवी एवं श्री गोविन्द नारायण मथुरिया</p>
                 <p><strong>निवासी:</strong> खण्डार (अक्षयगढ़ वाले)</p>
             </div>
@@ -2357,20 +2385,23 @@
         <div class="venue-cards">
             <div class="venue-card" data-aos="flip-left">
                 <h3>पाणिग्रहण संस्कार</h3>
-                <p><strong>सन्मति गार्डन</strong></p>
-                <p>कटोरा ताल, ग्वालियर</p>
-                <p style="margin-top: 10px; font-size: 0.9em;">तारों की छांव में</p>
-                <p style="margin-top: 10px;">गुरुवार, 05 फरवरी 2026</p>
+                <p style="font-size: 1.1em; margin: 15px 0;"><strong>गुरुवार, 05 फरवरी 2026</strong></p>
+                <p style="font-size: 1.05em; margin: 10px 0;"><strong>सन्मति गार्डन</strong></p>
+                <p style="font-size: 0.95em;">कटोरा ताल, ग्वालियर</p>
+                <p style="margin-top: 15px; font-size: 0.9em; font-style: italic; opacity: 0.9;">✨ तारों की छांव में ✨</p>
             </div>
             <div class="venue-card" data-aos="flip-right">
                 <h3>प्रीतिभोज स्थल</h3>
-                <p><strong>माथुर वैश्य धर्मशाला</strong></p>
-                <p>खण्डार, सवाई माधोपुर</p>
-                <p style="margin-top: 15px; font-size: 0.9em;">
-                    ⚜ हीरो विपुल मोटर्स<br>
-                    ⚜ बृजेश ट्रेडर्स<br>
-                    ⚜ हिन्दुस्तान शूज स्टोर
-                </p>
+                <p style="font-size: 1.05em; margin: 15px 0;"><strong>माथुर वैश्य धर्मशाला</strong></p>
+                <p style="font-size: 0.95em; margin-bottom: 20px;">खण्डार, सवाई माधोपुर</p>
+                <div style="border-top: 2px solid rgba(255,255,255,0.3); padding-top: 15px; margin-top: 15px;">
+                    <p style="font-size: 0.85em; margin-bottom: 8px; opacity: 0.9;">✦ सौजन्य से ✦</p>
+                    <p style="font-size: 0.9em; line-height: 1.8;">
+                        ⚜ हीरो विपुल मोटर्स<br>
+                        ⚜ बृजेश ट्रेडर्स<br>
+                        ⚜ हिन्दुस्तान शूज स्टोर
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -2394,43 +2425,77 @@
             </div>
             <div class="family-box" data-aos="fade-up" data-aos-delay="300">
                 <h4>स्वागतातुर</h4>
-                <p>गजानन्द जी, रामपति देवी - जगदीश जी</p>
+                <p>गजानन्द जी,<br>रामपति देवी - जगदीश जी</p>
                 <p>द्रोपती देवी - प्रकाश जी</p>
-                <p>रामकिशोरी देवी - गिराज जी</p>
+                <p>रामकिशोरी देवी - गिर्राज जी</p>
                 <p>कमलेश देवी - कुंजबिहारी जी</p>
                 <p>श्यामा देवी - पवन जी</p>
-                <p>दीपिका देवी - मनीष जी, हर्षिता</p>
+                <p>दीपिका देवी - मनीष जी,<br>हर्षिता</p>
             </div>
             <div class="family-box" data-aos="fade-up" data-aos-delay="400">
                 <h4>स्वागतातुर</h4>
                 <p>कृष्णा देवी - बृजेश</p>
                 <p>शैली देवी - विष्णु (Eng.)</p>
-                <p>रितु देवी - चन्द्र शेखर (Eng.)</p>
+                <p>रितु देवी - चन्द्रशेखर (Eng.)</p>
                 <p>प्रयागराज (Eng.)</p>
             </div>
             <div class="family-box" data-aos="fade-up" data-aos-delay="500">
                 <h4>दर्शनाभिलाषी</h4>
-                <p>रामस्वरुप, प्रहलाद, मोहनलाल, मुरारी, ओमप्रकाश, महेश, रामावतार, रुदांश एवं समस्त पैतिया परिवार</p>
+                <p>रामस्वरुप, प्रहलाद, मोहनलाल, मुरारी, ओमप्रकाश, महेश, रामावतार, रुद्रांश एवं समस्त पैतिया परिवार</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-message" data-aos="fade-up">
-            <p style="font-size: 1.3em; line-height: 2; height: 180px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                <span id="typed-footer" style="text-align: center; max-width: 90%;"></span>
-            </p>
-        </div>
-        <div style="margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 15px;" data-aos="fade-up" data-aos-delay="200">
-            <p><strong>प्रेषक:</strong></p>
-            <p>श्री शम्भूदयाल, जगदीश प्रसाद, नारायण प्रसाद, गोविन्द नारायण मथुरिया</p>
-            <p>खण्डार (अक्षयगढ़ वाले), सवाई माधोपुर (राज.)</p>
-            <p>M: 9460257171, 8727039860</p>
-        </div>
-        <div class="share-buttons">
-            <a href="#" class="share-btn" onclick="shareOnWhatsApp()" data-aos="zoom-in" data-aos-delay="300">📱 WhatsApp पर शेयर करें</a>
-            <a href="#" class="share-btn" onclick="addToCalendar()" data-aos="zoom-in" data-aos-delay="400">📅 Calendar में जोड़ें</a>
+        <div style="max-width: 900px; margin: 0 auto;">
+            <!-- Decorative top border -->
+            <div style="text-align: center; margin-bottom: 30px;" data-aos="fade-down">
+                <span style="font-size: 2em; color: #ffd700;">✦ ❖ ✦</span>
+            </div>
+            
+            <div class="footer-message" data-aos="fade-up">
+                <p style="font-size: 1.3em; line-height: 2; height: 180px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <span id="typed-footer" style="text-align: center; max-width: 90%;"></span>
+                </p>
+            </div>
+            
+            <!-- Enhanced sender info box -->
+            <div style="margin-top: 40px; padding: 35px; background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1)); border-radius: 20px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.2);" data-aos="fade-up" data-aos-delay="200">
+                <div style="border-bottom: 2px solid rgba(255,255,255,0.2); padding-bottom: 20px; margin-bottom: 20px;">
+                    <p style="font-size: 1.3em;"><strong>✦ प्रेषक ✦</strong></p>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <p style="font-size: 1.1em; line-height: 1.9; margin: 12px 0; font-weight: 500;">
+                        श्री शम्भूदयाल, जगदीश प्रसाद,<br>
+                        नारायण प्रसाद, गोविन्द नारायण मथुरिया
+                    </p>
+                </div>
+                
+                <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                    <p style="font-size: 0.98em; line-height: 1.7; opacity: 0.95;">
+                        📍 शुक्ला कॉलोनी, खण्डार (अक्षयगढ़ वाले),<br>
+                        सवाई माधोपुर (राजस्थान)
+                    </p>
+                </div>
+                
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid rgba(255,255,255,0.2);">
+                    <p style="font-size: 1.05em; letter-spacing: 0.5px;">
+                        📞 <strong style="font-size: 1.1em;">9460257171</strong> • <strong style="font-size: 1.1em;">8727039860</strong>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="share-buttons">
+                <a href="#" class="share-btn" onclick="shareOnWhatsApp()" data-aos="zoom-in" data-aos-delay="300">
+                    📱 WhatsApp पर शेयर करें
+                </a>
+                <a href="#" class="share-btn" onclick="addToCalendar()" data-aos="zoom-in" data-aos-delay="400">
+                    📅 Calendar में जोड़ें
+                </a>
+            </div>
+            
         </div>
     </footer>
 
@@ -2656,6 +2721,7 @@
                 strings: [
                     'हम सत्कार की थाली में चन्दन सा आदर, कुमकुम सी आस्था,<br>पुष्प सा प्रेम, अक्षत सा समर्पण लिए<br><strong>आपके आगमन हेतु प्रतीक्षारत हैं</strong>',
                     'हम हृदय की गहराइयों से आपका स्वागत करते हैं<br>आपकी उपस्थिति से यह उत्सव और भी शुभ होगा<br><strong>आपके पधारने की प्रतीक्षा है</strong>',
+                    'हल्दी है चंदन है रिश्तों का बंधन है,<br>आपका हमारे चाचा/मामा की शादी में<br><strong>हार्दिक अभिनंदन है</strong>',
                     'आपके चरणों में नमन करते हुए<br>हम आपको इस मंगल अवसर पर आमंत्रित करते हैं<br><strong>आपके आशीर्वाद की कामना है</strong>',
                     'प्रेम और सम्मान के साथ<br>हम आपको इस पावन समारोह में सादर आमंत्रित करते हैं<br><strong>आपकी उपस्थिति अपेक्षित है</strong>',
                     'आपके शुभ आगमन से यह समारोह पूर्ण होगा<br>हम आपके स्वागत के लिए तत्पर हैं<br><strong>आपके पधारने की प्रतीक्षा में</strong>'
@@ -2703,19 +2769,18 @@
         // Share Functions
         function shareOnWhatsApp() {
             heartConfetti(); // Add confetti on share
-            const text = encodeURIComponent('आप सादर आमंत्रित हैं!\n\nविपुल कृष्ण & ओमप्रभा के विवाह समारोह में\n\n📅 05 फरवरी 2026\n📍 सम्पत्ति गार्डन, ग्वालियर\n\nनिमंत्रण देखें: ' + window.location.href);
+            const text = encodeURIComponent('आप सादर आमंत्रित हैं!\n\nविपुल कृष्ण & ओमप्रभा के विवाह समारोह में\n\n📅 05 फरवरी 2026, सांय 6:00 बजे\n📍 सन्मति गार्डन, कटोरा ताल, ग्वालियर\n\nनिमंत्रण देखें: https://vipulwedsmahima.on.render.com');
             setTimeout(() => {
                 window.open('https://wa.me/?text=' + text, '_blank');
             }, 300);
         }
-
         function addToCalendar() {
             heartConfetti(); // Add confetti on calendar add
             const event = {
                 title: 'विपुल कृष्ण & ओमप्रभा - विवाह समारोह',
-                description: 'पाणिग्रहण संस्कार - सम्पत्ति गार्डन, ग्वालियर',
-                location: 'सम्पत्ति गार्डन, ग्वालियर, मध्य प्रदेश',
-                start: '2026-02-05T00:00:00',
+                description: 'पाणिग्रहण संस्कार - सन्मति गार्डन, कटोरा ताल, ग्वालियर',
+                location: 'सन्मति गार्डन, कटोरा ताल, ग्वालियर, मध्य प्रदेश',
+                start: '2026-02-05T18:00:00',
                 end: '2026-02-05T23:59:59'
             };
             
