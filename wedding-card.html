@@ -354,7 +354,7 @@
             width: 400px;
             height: 400px;
             opacity: 0.4;
-            animation: rotate 60s linear infinite;
+            animation: rotateHero 60s linear infinite;
             pointer-events: none;
             transition: all 0.3s ease;
         }
@@ -371,7 +371,7 @@
             transform: translateX(-50%);
         }
 
-        @keyframes rotate {
+        @keyframes rotateHero {
             from {
                 transform: translateX(-50%) rotate(0deg);
             }
@@ -709,7 +709,7 @@
 
         /* Gallery Section */
         .gallery-section {
-            background: white;
+            background: linear-gradient(to bottom, #fff9f0, #ffffff);
             padding: 60px 20px;
             position: relative;
             overflow: hidden;
@@ -796,7 +796,7 @@
 
         /* Couple Section */
         .couple-section {
-            background: white;
+            background: linear-gradient(to bottom, #fff9f0, #ffffff);
             position: relative;
             overflow: hidden;
         }
@@ -838,6 +838,28 @@
             color: #d4af37;
             margin: 40px 0;
             text-align: center;
+            position: relative;
+        }
+
+        .parinay-mandala {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: 350px;
+            z-index: -1;
+            opacity: 0.15;
+            animation: rotateMandala 60s linear infinite;
+        }
+
+        @keyframes rotateMandala {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
         }
 
         /* Ceremony Timeline */
@@ -979,8 +1001,9 @@
         }
 
         .family-box p {
-            margin: 8px 0;
+            margin: 10px 0;
             font-size: 0.95em;
+            line-height: 1.6;
         }
 
         /* Footer */
@@ -1154,8 +1177,10 @@
         <span class="music-icon" id="musicIcon">🎵</span>
     </div>
     <audio id="bgMusic" loop>
-        <!-- You can add your wedding music file here -->
-        <!-- <source src="wedding-music.mp3" type="audio/mpeg"> -->
+        <!-- Royalty-free wedding melody -->
+        <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_4a8c8e6e1d.mp3" type="audio/mpeg">
+        <!-- Fallback: Indian wedding instrumental -->
+        <source src="https://assets.mixkit.co/music/preview/mixkit-wedding-entrance-music-2783.mp3" type="audio/mpeg">
     </audio>
 
     <!-- Floating Flowers -->
@@ -2304,6 +2329,44 @@
             </div>
         </div>
         <div class="parinay-symbol" data-aos="zoom-in">
+            <!-- Background Mandala -->
+            <svg class="parinay-mandala" viewBox="0 0 200 200">
+                <!-- Outer petals -->
+                <g>
+                    <ellipse cx="100" cy="40" rx="12" ry="30" fill="#d4af37" opacity="0.6" transform="rotate(0 100 100)"/>
+                    <ellipse cx="100" cy="40" rx="12" ry="30" fill="#ff9933" opacity="0.6" transform="rotate(30 100 100)"/>
+                    <ellipse cx="100" cy="40" rx="12" ry="30" fill="#d4af37" opacity="0.6" transform="rotate(60 100 100)"/>
+                    <ellipse cx="100" cy="40" rx="12" ry="30" fill="#ff9933" opacity="0.6" transform="rotate(90 100 100)"/>
+                    <ellipse cx="100" cy="40" rx="12" ry="30" fill="#d4af37" opacity="0.6" transform="rotate(120 100 100)"/>
+                    <ellipse cx="100" cy="40" rx="12" ry="30" fill="#ff9933" opacity="0.6" transform="rotate(150 100 100)"/>
+                    <ellipse cx="100" cy="40" rx="12" ry="30" fill="#d4af37" opacity="0.6" transform="rotate(180 100 100)"/>
+                    <ellipse cx="100" cy="40" rx="12" ry="30" fill="#ff9933" opacity="0.6" transform="rotate(210 100 100)"/>
+                    <ellipse cx="100" cy="40" rx="12" ry="30" fill="#d4af37" opacity="0.6" transform="rotate(240 100 100)"/>
+                    <ellipse cx="100" cy="40" rx="12" ry="30" fill="#ff9933" opacity="0.6" transform="rotate(270 100 100)"/>
+                    <ellipse cx="100" cy="40" rx="12" ry="30" fill="#d4af37" opacity="0.6" transform="rotate(300 100 100)"/>
+                    <ellipse cx="100" cy="40" rx="12" ry="30" fill="#ff9933" opacity="0.6" transform="rotate(330 100 100)"/>
+                </g>
+                <!-- Middle petals -->
+                <g>
+                    <ellipse cx="100" cy="55" rx="10" ry="22" fill="#ff6600" opacity="0.7" transform="rotate(15 100 100)"/>
+                    <ellipse cx="100" cy="55" rx="10" ry="22" fill="#d4af37" opacity="0.7" transform="rotate(45 100 100)"/>
+                    <ellipse cx="100" cy="55" rx="10" ry="22" fill="#ff6600" opacity="0.7" transform="rotate(75 100 100)"/>
+                    <ellipse cx="100" cy="55" rx="10" ry="22" fill="#d4af37" opacity="0.7" transform="rotate(105 100 100)"/>
+                    <ellipse cx="100" cy="55" rx="10" ry="22" fill="#ff6600" opacity="0.7" transform="rotate(135 100 100)"/>
+                    <ellipse cx="100" cy="55" rx="10" ry="22" fill="#d4af37" opacity="0.7" transform="rotate(165 100 100)"/>
+                    <ellipse cx="100" cy="55" rx="10" ry="22" fill="#ff6600" opacity="0.7" transform="rotate(195 100 100)"/>
+                    <ellipse cx="100" cy="55" rx="10" ry="22" fill="#d4af37" opacity="0.7" transform="rotate(225 100 100)"/>
+                    <ellipse cx="100" cy="55" rx="10" ry="22" fill="#ff6600" opacity="0.7" transform="rotate(255 100 100)"/>
+                    <ellipse cx="100" cy="55" rx="10" ry="22" fill="#d4af37" opacity="0.7" transform="rotate(285 100 100)"/>
+                    <ellipse cx="100" cy="55" rx="10" ry="22" fill="#ff6600" opacity="0.7" transform="rotate(315 100 100)"/>
+                    <ellipse cx="100" cy="55" rx="10" ry="22" fill="#d4af37" opacity="0.7" transform="rotate(345 100 100)"/>
+                </g>
+                <!-- Center circle -->
+                <circle cx="100" cy="100" r="20" fill="#ffd700" opacity="0.7"/>
+                <circle cx="100" cy="100" r="15" fill="#ff9933" opacity="0.6"/>
+                <circle cx="100" cy="100" r="10" fill="#d4af37" opacity="0.5"/>
+            </svg>
+            
             <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
                 <span style="font-size: 1.5em; color: #d4af37;">❀</span>
                 <span style="font-size: 1.3em;">॥ <span id="typed-parinay" style="display: inline-block; min-width: 200px;"></span> ॥</span>
@@ -2402,19 +2465,18 @@
                 <h3>पाणिग्रहण संस्कार</h3>
                 <p style="font-size: 1.1em; margin: 15px 0;"><strong>गुरुवार, 05 फरवरी 2026</strong></p>
                 <p style="font-size: 1.05em; margin: 10px 0;"><strong>सन्मति गार्डन</strong></p>
-                <p style="font-size: 0.95em;">कटोरा ताल, ग्वालियर</p>
+                <p style="font-size: 0.95em; margin: 10px 0;">कटोरा ताल, ग्वालियर</p>
                 <p style="margin-top: 15px; font-size: 0.9em; font-style: italic; opacity: 0.9;">✨ तारों की छांव में ✨</p>
             </div>
             <div class="venue-card" data-aos="flip-right">
                 <h3>प्रीतिभोज स्थल</h3>
-                <p style="font-size: 1.05em; margin: 15px 0;"><strong>माथुर वैश्य धर्मशाला</strong></p>
-                <p style="font-size: 0.95em; margin-bottom: 20px;">खण्डार, सवाई माधोपुर</p>
+                <p style="font-size: 1.1em; margin: 15px 0;"><strong>मंगलवार, 03 फरवरी 2026</strong></p>
+                <p style="font-size: 1.05em; margin: 10px 0;"><strong>माथुर वैश्य धर्मशाला</strong></p>
+                <p style="font-size: 0.95em; margin: 10px 0;">खण्डार, सवाई माधोपुर</p>
                 <div style="border-top: 2px solid rgba(255,255,255,0.3); padding-top: 15px; margin-top: 15px;">
                     <p style="font-size: 0.85em; margin-bottom: 8px; opacity: 0.9;">✦ सौजन्य से ✦</p>
-                    <p style="font-size: 0.9em; line-height: 1.8;">
-                        ⚜ हीरो विपुल मोटर्स<br>
-                        ⚜ बृजेश ट्रेडर्स<br>
-                        ⚜ हिन्दुस्तान शूज स्टोर
+                    <p style="font-size: 0.85em; line-height: 1.6;">
+                        ⚜ हीरो विपुल मोटर्स • बृजेश ट्रेडर्स • हिन्दुस्तान शूज स्टोर
                     </p>
                 </div>
             </div>
@@ -2445,7 +2507,7 @@
                 <p>रामकिशोरी देवी - गिर्राज जी</p>
                 <p>कमलेश देवी - कुंजबिहारी जी</p>
                 <p>श्यामा देवी - पवन जी</p>
-                <p>दीपिका देवी - मनीष जी,<br>हर्षिता</p>
+                <p>दीपिका देवी - मनीष जी</p>
             </div>
             <div class="family-box" data-aos="fade-up" data-aos-delay="400">
                 <h4>स्वागतातुर</h4>
@@ -2453,6 +2515,7 @@
                 <p>शैली देवी - विष्णु (Eng.)</p>
                 <p>रितु देवी - चन्द्रशेखर (Eng.)</p>
                 <p>प्रयागराज (Eng.)</p>
+                <p>हर्षिता</p>
             </div>
             <div class="family-box" data-aos="fade-up" data-aos-delay="500">
                 <h4>दर्शनाभिलाषी</h4>
@@ -2483,8 +2546,7 @@
                 
                 <div style="margin: 20px 0;">
                     <p style="font-size: 1.1em; line-height: 1.9; margin: 12px 0; font-weight: 500;">
-                        श्री शम्भूदयाल, जगदीश प्रसाद,<br>
-                        नारायण प्रसाद, गोविन्द नारायण मथुरिया
+                        श्री शम्भूदयाल, श्री जगदीश प्रसाद, श्री नारायण प्रसाद, श्री गोविन्द नारायण मथुरिया
                     </p>
                 </div>
                 
@@ -2719,9 +2781,9 @@
                     'आपकी उपस्थिति हमारे लिए सौभाग्य होगी',
                     'आपके आशीर्वाद की अपेक्षा है'
                 ],
-                typeSpeed: 60,
-                backSpeed: 30,
-                backDelay: 3000,
+                typeSpeed: 100,
+                backSpeed: 50,
+                backDelay: 4000,
                 startDelay: 1000,
                 loop: true,
                 showCursor: true,
@@ -2737,13 +2799,12 @@
                     'हम सत्कार की थाली में चन्दन सा आदर, कुमकुम सी आस्था,<br>पुष्प सा प्रेम, अक्षत सा समर्पण लिए<br><strong>आपके आगमन हेतु प्रतीक्षारत हैं</strong>',
                     'हम हृदय की गहराइयों से आपका स्वागत करते हैं<br>आपकी उपस्थिति से यह उत्सव और भी शुभ होगा<br><strong>आपके पधारने की प्रतीक्षा है</strong>',
                     'हल्दी है चंदन है रिश्तों का बंधन है,<br>आपका हमारे चाचा/मामा की शादी में<br><strong>हार्दिक अभिनंदन है</strong>',
-                    'आपके चरणों में नमन करते हुए<br>हम आपको इस मंगल अवसर पर आमंत्रित करते हैं<br><strong>आपके आशीर्वाद की कामना है</strong>',
                     'प्रेम और सम्मान के साथ<br>हम आपको इस पावन समारोह में सादर आमंत्रित करते हैं<br><strong>आपकी उपस्थिति अपेक्षित है</strong>',
                     'आपके शुभ आगमन से यह समारोह पूर्ण होगा<br>हम आपके स्वागत के लिए तत्पर हैं<br><strong>आपके पधारने की प्रतीक्षा में</strong>'
                 ],
-                typeSpeed: 50,
-                backSpeed: 25,
-                backDelay: 4000,
+                typeSpeed: 80,
+                backSpeed: 40,
+                backDelay: 5000,
                 startDelay: 2000,
                 loop: true,
                 showCursor: true,
@@ -2759,9 +2820,9 @@
                     'परिणय-बंधन',
                     'शुभ विवाह'
                 ],
-                typeSpeed: 80,
-                backSpeed: 40,
-                backDelay: 3000,
+                typeSpeed: 120,
+                backSpeed: 60,
+                backDelay: 4000,
                 startDelay: 500,
                 loop: true,
                 showCursor: false,
@@ -2801,7 +2862,7 @@
         // Share Functions
         function shareOnWhatsApp() {
             heartConfetti(); // Add confetti on share
-            const text = encodeURIComponent('आप सादर आमंत्रित हैं!\n\nविपुल कृष्ण & ओमप्रभा के विवाह समारोह में\n\n📅 05 फरवरी 2026, सांय 6:00 बजे\n📍 सन्मति गार्डन, कटोरा ताल, ग्वालियर\n\nनिमंत्रण देखें: https://vipulwedsmahima.on.render.com');
+            const text = encodeURIComponent('नमस्कार!\n\nआप सादर आमंत्रित हैं\n\nविपुल कृष्ण & ओमप्रभा (महिमा) के शुभ विवाह समारोह में\n\nतिथि: गुरुवार, 05 फरवरी 2026\nसमय: सांय 6:00 बजे\nस्थान: सन्मति गार्डन, कटोरा ताल, ग्वालियर\n\nआपकी उपस्थिति हमारे लिए सौभाग्य होगी\n\nडिजिटल निमंत्रण देखें:\nhttps://vipulwedsmahima.onrender.com/\n\nधन्यवाद');
             setTimeout(() => {
                 window.open('https://wa.me/?text=' + text, '_blank');
             }, 300);
