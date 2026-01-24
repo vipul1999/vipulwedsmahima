@@ -724,6 +724,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            padding: 20px;
         }
 
         .gallery-placeholder {
@@ -744,10 +746,14 @@
         }
 
         .gallery-card img {
-            width: 100%;
-            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
             object-position: center;
+            border: 8px solid transparent;
+            border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><defs><pattern id="frame-pattern" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="6" cy="6" r="2" fill="%23d4af37" opacity="0.6"/><circle cx="3" cy="3" r="1" fill="%23ff9933" opacity="0.5"/><circle cx="9" cy="9" r="1" fill="%23ff6600" opacity="0.5"/></pattern></defs><rect width="60" height="60" fill="url(%23frame-pattern)"/><rect x="2" y="2" width="56" height="56" fill="none" stroke="%23d4af37" stroke-width="2"/><rect x="5" y="5" width="50" height="50" fill="none" stroke="%23ff9933" stroke-width="1.5"/></svg>') 15;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            position: relative;
         }
 
         /* Mobile responsive gallery */
