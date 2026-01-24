@@ -12,6 +12,9 @@
     <!-- Swiper for Gallery -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
     <style>
         * {
             margin: 0;
@@ -2288,19 +2291,25 @@
         <h2 class="section-title" data-aos="fade-up">वर-वधू परिचय</h2>
         <div class="couple-cards">
             <div class="couple-card" data-aos="fade-right">
-                <h3>आयुष्मान विपुल कृष्ण</h3>
+                <h3><span style="color: #daa520; font-weight: 400;">आयुष्मान</span> <span style="color: #ff6600; font-weight: 700;">विपुल कृष्ण</span></h3>
                 <p><strong>सुपौत्र:</strong> श्रीमती भूली देवी एवं स्व. श्री लड्डूलाल जी मथुरिया</p>
                 <p><strong>सुपुत्र:</strong> श्रीमती श्यामा देवी एवं श्री गोविन्द नारायण मथुरिया</p>
-                <p><strong>निवासी:</strong> खण्डार (अक्षयगढ़ वाले)</p>
+                <p><strong>निवासी:</strong> शुक्ला कॉलोनी, खण्डार (अक्षयगढ़ वाले), राजस्थान</p>
             </div>
             <div class="couple-card" data-aos="fade-left">
-                <h3>आयुष्मति ओमप्रभा (महिमा)</h3>
+                <h3><span style="color: #daa520; font-weight: 400;">आयुष्मति</span> <span style="color: #ff6600; font-weight: 700;">ओमप्रभा (महिमा)</span></h3>
                 <p><strong>सुपौत्री:</strong> श्रीमती रामरती देवी एवं स्व. श्री मायाराम जी गुप्ता</p>
                 <p><strong>सुपुत्री:</strong> श्रीमती प्रेमलता देवी एवं श्री अनिल कुमार जी गुप्ता</p>
-                <p><strong>निवासी:</strong> ग्वालियर (मध्य प्रदेश)</p>
+                <p><strong>निवासी:</strong> सिंधु कॉलोनी, ग्वालियर (रजोड़ा वाले), मध्य प्रदेश</p>
             </div>
         </div>
-        <div class="parinay-symbol" data-aos="zoom-in">॥ परिणय-बंधन ॥</div>
+        <div class="parinay-symbol" data-aos="zoom-in">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <span style="font-size: 1.5em; color: #d4af37;">❀</span>
+                <span style="font-size: 1.3em;">॥ <span id="typed-parinay" style="display: inline-block; min-width: 200px;"></span> ॥</span>
+                <span style="font-size: 1.5em; color: #d4af37;">❀</span>
+            </div>
+        </div>
     </section>
 
     <!-- Ceremony Timeline -->
@@ -2739,6 +2748,23 @@
                 loop: true,
                 showCursor: true,
                 cursorChar: '|',
+                contentType: 'html'
+            });
+        }, 100);
+
+        // Initialize Typed.js Parinay-Bandhan Message
+        setTimeout(function() {
+            const typedParinay = new Typed('#typed-parinay', {
+                strings: [
+                    'परिणय-बंधन',
+                    'शुभ विवाह'
+                ],
+                typeSpeed: 80,
+                backSpeed: 40,
+                backDelay: 3000,
+                startDelay: 500,
+                loop: true,
+                showCursor: false,
                 contentType: 'html'
             });
         }, 100);
