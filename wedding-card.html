@@ -24,7 +24,7 @@
 
         body {
             font-family: 'Noto Sans Devanagari', sans-serif;
-            background: #1a1a1a;
+            background: linear-gradient(to bottom, #fff9f0, #ffffff);
             color: #333;
             overflow-x: hidden;
         }
@@ -91,8 +91,8 @@
         }
 
         @keyframes float {
-            0%, 100% {
-                transform: translateY(100vh) rotate(0deg);
+            0% {
+                transform: translateY(-100px) rotate(0deg);
                 opacity: 0;
             }
             10% {
@@ -102,7 +102,7 @@
                 opacity: 0.6;
             }
             100% {
-                transform: translateY(-100px) rotate(360deg);
+                transform: translateY(100vh) rotate(360deg);
                 opacity: 0;
             }
         }
@@ -267,25 +267,6 @@
             transform: rotate(180deg);
         }
 
-        /* Border Pattern Animation - Simplified */
-        @keyframes borderGlow {
-            0%, 100% {
-                box-shadow: 
-                    inset 0 0 0 5px #f5f0e8,
-                    inset 0 0 0 8px #d4af37,
-                    inset 0 0 20px rgba(212, 175, 55, 0.2);
-            }
-            50% {
-                box-shadow: 
-                    inset 0 0 0 5px #f5f0e8,
-                    inset 0 0 0 8px #ff9933,
-                    inset 0 0 25px rgba(255, 153, 51, 0.3);
-            }
-        }
-
-        .hero {
-            animation: borderGlow 4s ease-in-out infinite;
-        }
 
         /* Lottie Floral Arch Borders */
         .floral-arch-left,
@@ -520,44 +501,6 @@
             height: 100%;
         }
 
-        /* Animated Garland Elements - Subtle Movement */
-        .garland-flower {
-            animation: floatGarland 6s ease-in-out infinite;
-        }
-
-        .garland-flower:nth-child(2n) {
-            animation-delay: 1s;
-        }
-
-        .garland-flower:nth-child(3n) {
-            animation-delay: 2s;
-        }
-
-        .garland-leaf {
-            animation: swayLeaf 5s ease-in-out infinite;
-        }
-
-        .garland-leaf:nth-child(2n) {
-            animation-delay: 1.5s;
-        }
-
-        @keyframes floatGarland {
-            0%, 100% {
-                transform: translateY(0) scale(1);
-            }
-            50% {
-                transform: translateY(-2px) scale(1.01);
-            }
-        }
-
-        @keyframes swayLeaf {
-            0%, 100% {
-                transform: rotate(0deg);
-            }
-            50% {
-                transform: rotate(3deg);
-            }
-        }
 
         .scroll-indicator {
             position: absolute;
@@ -717,7 +660,7 @@
 
 
         .gallery-card {
-            background: #ffffff;
+            background: linear-gradient(to bottom, #fff9f0, #ffffff);
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -846,10 +789,10 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 350px;
-            height: 350px;
+            width: 400px;
+            height: 400px;
             z-index: -1;
-            opacity: 0.15;
+            opacity: 0.25;
             animation: rotateMandala 60s linear infinite;
         }
 
@@ -943,7 +886,7 @@
 
         /* Venue Section */
         .venue-section {
-            background: white;
+            background: linear-gradient(to bottom, #fff9f0, #ffffff);
             position: relative;
             overflow: hidden;
         }
@@ -1010,14 +953,14 @@
         .footer {
             background: linear-gradient(135deg, #ff9933, #ff6600);
             color: white;
-            padding: 60px 20px;
+            padding: 40px 20px 50px;
             text-align: center;
         }
 
         .footer-message {
             font-size: 1.3em;
             line-height: 1.8;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .share-buttons {
@@ -1026,21 +969,35 @@
             gap: 20px;
             flex-wrap: wrap;
             margin-top: 40px;
+            padding: 0 20px;
+            width: 100%;
         }
 
         .share-btn {
-            background: white;
-            color: #ff6600;
+            background: #ffd700;
+            color: #8b4513;
             padding: 15px 30px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: transform 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            border: 3px solid #fff;
+            display: inline-block;
+            min-width: 200px;
+            text-align: center;
         }
 
         .share-btn:hover {
             transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .share-btn {
+                min-width: 250px;
+                padding: 18px 35px;
+                font-size: 1.1em;
+            }
         }
 
         /* Mobile Responsive */
@@ -2367,10 +2324,10 @@
                 <circle cx="100" cy="100" r="10" fill="#d4af37" opacity="0.5"/>
             </svg>
             
-            <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <span style="font-size: 1.5em; color: #d4af37;">❀</span>
-                <span style="font-size: 1.3em;">॥ <span id="typed-parinay" style="display: inline-block; min-width: 200px;"></span> ॥</span>
-                <span style="font-size: 1.5em; color: #d4af37;">❀</span>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <span style="font-size: 1.2em; color: #d4af37;">❀</span>
+                <span style="font-size: 1.1em;">॥ <span id="typed-parinay" style="display: inline-block; min-width: 180px;"></span> ॥</span>
+                <span style="font-size: 1.2em; color: #d4af37;">❀</span>
             </div>
         </div>
     </section>
@@ -2400,11 +2357,15 @@
                     </div>
                     <div class="timeline-event">
                         <strong>हल्दी</strong><br>
-                        दोपहर 02:00 बजे
+                        माथुर वैश्य धर्मशाला दोपहर 02:00 बजे
                     </div>
                     <div class="timeline-event">
-                        <strong>महिला संगीत, रिंग सेरेमनी</strong><br>
-                        सांय 07:00 बजे
+                        <strong>महिला संगीत</strong><br>
+                        माथुर वैश्य धर्मशाला सांय 07:00 बजे
+                    </div>
+                    <div class="timeline-event">
+                        <strong>रिंग सेरेमनी</strong><br>
+                        माथुर वैश्य धर्मशाला रात्रि 10:00 बजे
                     </div>
                 </div>
             </div>
@@ -2419,7 +2380,7 @@
                     </div>
                     <div class="timeline-event">
                         <strong>चाक-बासन</strong><br>
-                        दोपहर 01:00 बजे
+                        निजगृह दोपहर 01:00 बजे
                     </div>
                     <div class="timeline-event">
                         <strong>प्रीतिभोज</strong><br>
@@ -2427,7 +2388,7 @@
                     </div>
                     <div class="timeline-event">
                         <strong>भात पहरावनी</strong><br>
-                        रात्रि 09:00 बजे
+                        माथुर वैश्य धर्मशाला रात्रि 09:00 बजे
                     </div>
                 </div>
             </div>
@@ -2449,8 +2410,18 @@
                     <div class="timeline-date">गुरुवार, 05 फरवरी 2026</div>
                     <div class="timeline-event">
                         <strong>पाणिग्रहण संस्कार</strong><br>
-                        सन्मति गार्डन, कटोरा ताल, ग्वालियर<br>
-                        तारों की छांव में
+                        सन्मति गार्डन, ग्वालियर (तारों की छांव में)
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">शुक्रवार, 06 फरवरी 2026</div>
+                    <div class="timeline-event">
+                        <strong>दुल्हन प्रवेश</strong><br>
+                        निजगृह दोपहर 02:00 बजे
                     </div>
                 </div>
             </div>
@@ -2527,49 +2498,44 @@
     <!-- Footer -->
     <footer class="footer">
         <div style="max-width: 900px; margin: 0 auto;">
-            <!-- Decorative top border -->
-            <div style="text-align: center; margin-bottom: 30px;" data-aos="fade-down">
-                <span style="font-size: 2em; color: #ffd700;">✦ ❖ ✦</span>
-            </div>
-            
             <div class="footer-message" data-aos="fade-up">
-                <p style="font-size: 1.3em; line-height: 2; height: 180px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <p style="font-size: 1.3em; line-height: 2; height: 160px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
                     <span id="typed-footer" style="text-align: center; max-width: 90%;"></span>
                 </p>
             </div>
             
             <!-- Enhanced sender info box -->
-            <div style="margin-top: 40px; padding: 35px; background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1)); border-radius: 20px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.2);" data-aos="fade-up" data-aos-delay="200">
-                <div style="border-bottom: 2px solid rgba(255,255,255,0.2); padding-bottom: 20px; margin-bottom: 20px;">
+            <div style="margin-top: 30px; padding: 28px; background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1)); border-radius: 20px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.2);" data-aos="fade-up" data-aos-delay="200">
+                <div style="border-bottom: 2px solid rgba(255,255,255,0.2); padding-bottom: 18px; margin-bottom: 18px;">
                     <p style="font-size: 1.3em;"><strong>✦ प्रेषक ✦</strong></p>
                 </div>
                 
-                <div style="margin: 20px 0;">
-                    <p style="font-size: 1.1em; line-height: 1.9; margin: 12px 0; font-weight: 500;">
+                <div style="margin: 18px 0;">
+                    <p style="font-size: 1.1em; line-height: 1.9; margin: 10px 0; font-weight: 500;">
                         श्री शम्भूदयाल, श्री जगदीश प्रसाद, श्री नारायण प्रसाद, श्री गोविन्द नारायण मथुरिया
                     </p>
                 </div>
                 
-                <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                <div style="margin: 18px 0; padding: 14px; background: rgba(255,255,255,0.1); border-radius: 10px;">
                     <p style="font-size: 0.98em; line-height: 1.7; opacity: 0.95;">
                         📍 शुक्ला कॉलोनी, खण्डार (अक्षयगढ़ वाले),<br>
                         सवाई माधोपुर (राजस्थान)
                     </p>
                 </div>
                 
-                <div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid rgba(255,255,255,0.2);">
+                <div style="margin-top: 18px; padding-top: 18px; border-top: 2px solid rgba(255,255,255,0.2);">
                     <p style="font-size: 1.05em; letter-spacing: 0.5px;">
                         📞 <strong style="font-size: 1.1em;">9460257171</strong> • <strong style="font-size: 1.1em;">8727039860</strong>
                     </p>
                 </div>
             </div>
             
-            <div class="share-buttons">
-                <a href="#" class="share-btn" onclick="shareOnWhatsApp()" data-aos="zoom-in" data-aos-delay="300">
-                    📱 WhatsApp पर शेयर करें
+            <div class="share-buttons" style="margin-top: 35px;">
+                <a href="#" class="share-btn" onclick="shareOnWhatsApp()" data-aos="zoom-in" data-aos-delay="300" style="background: #25D366; color: white;">
+                    <i class="fab fa-whatsapp" style="font-size: 1.3em; margin-right: 8px;"></i> WhatsApp पर शेयर करें
                 </a>
-                <a href="#" class="share-btn" onclick="addToCalendar()" data-aos="zoom-in" data-aos-delay="400">
-                    📅 Calendar में जोड़ें
+                <a href="#" class="share-btn" onclick="addToCalendar()" data-aos="zoom-in" data-aos-delay="400" style="background: #4285F4; color: white;">
+                    <i class="far fa-calendar-plus" style="font-size: 1.2em; margin-right: 8px;"></i> Calendar में जोड़ें
                 </a>
             </div>
             
