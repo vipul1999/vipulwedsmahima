@@ -50,9 +50,6 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             cursor: pointer;
             box-shadow: 0 5px 20px rgba(255, 102, 0, 0.5);
             transition: transform 0.3s ease;
@@ -78,6 +75,10 @@
         .music-icon {
             font-size: 1.5em;
             color: white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
 
         /* Floating Flowers Animation */
@@ -1131,13 +1132,14 @@
 
     <!-- Music Player -->
     <div class="music-player" id="musicPlayer" onclick="toggleMusic()">
-        <span class="music-icon" id="musicIcon">🎵</span>
+        <span class="music-icon" id="musicIcon">🔊</span>
     </div>
+    
     <audio id="bgMusic" loop>
-        <!-- Royalty-free wedding melody -->
+        <!-- Local wedding music -->
+        <source src="music.mp3" type="audio/mpeg">
+        <!-- Fallback: Royalty-free wedding melody -->
         <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_4a8c8e6e1d.mp3" type="audio/mpeg">
-        <!-- Fallback: Indian wedding instrumental -->
-        <source src="https://assets.mixkit.co/music/preview/mixkit-wedding-entrance-music-2783.mp3" type="audio/mpeg">
     </audio>
 
     <!-- Floating Flowers -->
@@ -2324,9 +2326,9 @@
                     <ellipse cx="100" cy="55" rx="10" ry="22" fill="#d4af37" opacity="0.7" transform="rotate(345 100 100)"/>
                 </g>
                 <!-- Center circle -->
-                <circle cx="100" cy="100" r="20" fill="#ffd700" opacity="0.7"/>
-                <circle cx="100" cy="100" r="15" fill="#ff9933" opacity="0.6"/>
-                <circle cx="100" cy="100" r="10" fill="#d4af37" opacity="0.5"/>
+                <circle cx="100" cy="100" r="20" fill="#ffd700" opacity="0.9"/>
+                <circle cx="100" cy="100" r="15" fill="#ff9933" opacity="0.85"/>
+                <circle cx="100" cy="100" r="10" fill="#d4af37" opacity="0.8"/>
             </svg>
             
             <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
@@ -2624,23 +2626,71 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // Music Player
-        let isPlaying = false;
+        // Music Player - Icon-Only Volume Control
         const music = document.getElementById('bgMusic');
         const musicPlayer = document.getElementById('musicPlayer');
         const musicIcon = document.getElementById('musicIcon');
+        
+        // Volume levels: 33% → 66% → 100% → 0% → 33%
+        const volumeLevels = [0.33, 0.66, 1.0, 0];
+        const volumeIcons = ['🔈', '🔉', '🔊', '🔇']; // 4 distinct icons: low, medium, high, mute
+        let currentVolumeIndex = 0; // Start at 33%
+        let fadeInterval = null;
+        
+        // Set initial volume and icon
+        music.volume = volumeLevels[currentVolumeIndex];
+        musicIcon.textContent = volumeIcons[currentVolumeIndex];
+        
+        // Auto-play music on page load
+        music.play().then(() => {
+            musicPlayer.classList.add('playing');
+        }).catch(err => {
+            // Browser blocked autoplay - user needs to click
+            console.log('Autoplay blocked, user interaction required');
+        });
+        
+        // Smooth volume fade
+        function fadeVolume(targetVolume, duration = 500) {
+            const startVolume = music.volume;
+            const volumeDiff = targetVolume - startVolume;
+            const steps = 50;
+            const stepDuration = duration / steps;
+            let currentStep = 0;
+            
+            if (fadeInterval) clearInterval(fadeInterval);
+            
+            fadeInterval = setInterval(() => {
+                currentStep++;
+                music.volume = startVolume + (volumeDiff * (currentStep / steps));
+                
+                if (currentStep >= steps) {
+                    music.volume = targetVolume;
+                    clearInterval(fadeInterval);
+                    fadeInterval = null;
+                }
+            }, stepDuration);
+        }
 
         function toggleMusic() {
-            if (isPlaying) {
-                music.pause();
-                musicPlayer.classList.remove('playing');
-                musicIcon.textContent = '🎵';
-                isPlaying = false;
-            } else {
+            // Cycle to next volume
+            currentVolumeIndex = (currentVolumeIndex + 1) % volumeLevels.length;
+            const targetVolume = volumeLevels[currentVolumeIndex];
+            
+            // Update icon immediately
+            musicIcon.textContent = volumeIcons[currentVolumeIndex];
+            
+            // Fade to new volume
+            fadeVolume(targetVolume, 500);
+            
+            // Handle play/pause
+            if (targetVolume > 0 && music.paused) {
                 music.play();
                 musicPlayer.classList.add('playing');
-                musicIcon.textContent = '🎶';
-                isPlaying = true;
+            } else if (targetVolume === 0) {
+                setTimeout(() => {
+                    music.pause();
+                    musicPlayer.classList.remove('playing');
+                }, 500);
             }
         }
 
