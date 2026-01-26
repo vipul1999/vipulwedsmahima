@@ -111,7 +111,12 @@
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, #f5f0e8 0%, #faf7f2 50%, #f0ebe3 100%);
+            background: 
+                linear-gradient(135deg, rgba(245, 240, 232, 0.2) 0%, rgba(250, 247, 242, 0.2) 50%, rgba(240, 235, 227, 0.2) 100%),
+                url('images/border.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -230,65 +235,6 @@
         .ganesh-decoration:nth-child(3) { top: 50%; right: -10px; transform: translateY(-50%); }
 
 
-        .corner-ornament {
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            z-index: 3;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .corner-ornament svg {
-            width: 100%;
-            height: 100%;
-            filter: drop-shadow(2px 2px 4px rgba(139, 115, 85, 0.3));
-        }
-
-        .corner-top-left {
-            top: 15px;
-            left: 15px;
-        }
-
-        .corner-top-right {
-            top: 15px;
-            right: 15px;
-            transform: rotate(90deg);
-        }
-
-        .corner-bottom-left {
-            bottom: 15px;
-            left: 15px;
-            transform: rotate(-90deg);
-        }
-
-        .corner-bottom-right {
-            bottom: 15px;
-            right: 15px;
-            transform: rotate(180deg);
-        }
-
-
-        /* Lottie Floral Arch Borders */
-        .floral-arch-left,
-        .floral-arch-right {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 300px;
-            height: 100%;
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .floral-arch-left {
-            left: -30px;
-        }
-
-        .floral-arch-right {
-            right: -30px;
-            transform: scaleX(-1); /* Mirror the right side */
-        }
 
         /* Ribbon bows for sang text */
         .sang-ribbon {
@@ -449,57 +395,6 @@
             right: -20px;
             top: 50%;
             transform: translateY(-50%);
-        }
-
-        /* Complex SVG Garland Border */
-        .garland-border-top,
-        .garland-border-bottom,
-        .garland-border-left,
-        .garland-border-right {
-            position: absolute;
-            z-index: 3;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .garland-border-top {
-            top: 20px;
-            left: 120px;
-            right: 120px;
-            height: 100px;
-        }
-
-        .garland-border-bottom {
-            bottom: 20px;
-            left: 120px;
-            right: 120px;
-            height: 100px;
-        }
-
-        .garland-border-left {
-            left: 20px;
-            top: 120px;
-            bottom: 120px;
-            width: 100px;
-        }
-
-        .garland-border-right {
-            right: 20px;
-            top: 120px;
-            bottom: 120px;
-            width: 100px;
-        }
-
-        .garland-border-top svg,
-        .garland-border-bottom svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .garland-border-left svg,
-        .garland-border-right svg {
-            width: 100%;
-            height: 100%;
         }
 
 
