@@ -2649,13 +2649,51 @@
         music.volume = volumeLevels[currentVolumeIndex];
         musicIcon.textContent = volumeIcons[currentVolumeIndex];
         
-        // Auto-play music on page load
-        music.play().then(() => {
-            musicPlayer.classList.add('playing');
-        }).catch(err => {
-            // Browser blocked autoplay - user needs to click
-            console.log('Autoplay blocked, user interaction required');
-        });
+        // Try to auto-play music on page load
+        const attemptAutoplay = () => {
+            music.play().then(() => {
+                musicPlayer.classList.add('playing');
+            }).catch(err => {
+                console.log('Autoplay blocked, waiting for user interaction');
+            });
+        };
+        
+        // Try immediately
+        attemptAutoplay();
+        
+        // Also try after a short delay
+        setTimeout(attemptAutoplay, 100);
+        
+        // Start music on any user interaction if not already playing
+        let musicStarted = false;
+        const startMusicOnInteraction = (e) => {
+            // Don't start if clicking the music player button itself
+            if (e && e.target && e.target.closest('#musicPlayer')) {
+                return;
+            }
+            
+            if (music.paused && !musicStarted) {
+                music.play().then(() => {
+                    musicPlayer.classList.add('playing');
+                    musicStarted = true;
+                    // Remove listeners after music starts
+                    document.removeEventListener('click', startMusicOnInteraction);
+                    document.removeEventListener('touchstart', startMusicOnInteraction);
+                    document.removeEventListener('keydown', startMusicOnInteraction);
+                    document.removeEventListener('mousemove', startMusicOnInteraction);
+                }).catch(err => {
+                    console.log('Could not start music');
+                });
+            }
+        };
+        
+        // Add multiple listeners for user interaction
+        document.addEventListener('click', startMusicOnInteraction);
+        document.addEventListener('touchstart', startMusicOnInteraction);
+        document.addEventListener('keydown', startMusicOnInteraction);
+        document.addEventListener('mousemove', startMusicOnInteraction);
+        document.body.addEventListener('mouseenter', startMusicOnInteraction);
+        document.body.addEventListener('mouseover', startMusicOnInteraction);
         
         // Smooth volume fade
         function fadeVolume(targetVolume, duration = 500) {
