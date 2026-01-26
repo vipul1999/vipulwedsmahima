@@ -281,14 +281,14 @@
             position: absolute;
             width: 400px;
             height: 400px;
-            opacity: 0.4;
+            opacity: 0.5;
             animation: rotateHero 60s linear infinite;
             pointer-events: none;
             transition: all 0.3s ease;
         }
 
         .mandala-top {
-            top: 30%;
+            top: 19%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
@@ -422,9 +422,19 @@
             color: #8b7355;
         }
 
+        /* Main Content Wrapper - Single Background for All Sections */
+        .main-content-wrapper {
+            background: 
+                linear-gradient(to bottom, rgba(255, 249, 240, 0.4), rgba(255, 255, 255, 0.4)),
+                url('images/border2.png');
+            background-size: auto;
+            background-repeat: repeat;
+            background-position: top left;
+            background-attachment: scroll;
+        }
+
         /* Countdown Section */
         .countdown-section {
-            background: linear-gradient(to bottom, #fff9f0, #ffffff);
             padding: 80px 20px;
             text-align: center;
         }
@@ -505,8 +515,8 @@
             display: inline-block;
             margin-right: 20px;
             font-size: 0.8em;
-            color: #d4af37;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            color: #b8860b;
+            text-shadow: 0 0 10px rgba(184, 134, 11, 0.6);
         }
 
         .section-title::after {
@@ -514,8 +524,8 @@
             display: inline-block;
             margin-left: 20px;
             font-size: 0.8em;
-            color: #d4af37;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            color: #b8860b;
+            text-shadow: 0 0 10px rgba(184, 134, 11, 0.6);
         }
 
         .section-title-underline {
@@ -548,7 +558,6 @@
 
         /* Gallery Section */
         .gallery-section {
-            background: linear-gradient(to bottom, #fff9f0, #ffffff);
             padding: 60px 20px;
             position: relative;
             overflow: hidden;
@@ -556,10 +565,10 @@
 
 
         .gallery-card {
-            background: linear-gradient(to bottom, #fff9f0, #ffffff);
+            background: linear-gradient(to bottom, rgba(250, 235, 215, 0.95), rgba(245, 222, 179, 0.95));
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.3);
             height: 70vh;
             max-height: 700px;
             min-height: 400px;
@@ -568,6 +577,8 @@
             justify-content: center;
             position: relative;
             padding: 5px 20px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .gallery-placeholder {
@@ -635,7 +646,6 @@
 
         /* Couple Section */
         .couple-section {
-            background: linear-gradient(to bottom, #fff9f0, #ffffff);
             position: relative;
             overflow: hidden;
         }
@@ -649,12 +659,14 @@
         }
 
         .couple-card {
-            background: linear-gradient(135deg, #fff9f0, #ffe6cc);
+            background: linear-gradient(135deg, rgba(250, 235, 215, 0.95), rgba(245, 222, 179, 0.95));
             padding: 40px;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.3);
             transition: transform 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .couple-card:hover {
@@ -674,7 +686,8 @@
 
         .parinay-symbol {
             font-size: 2em;
-            color: #d4af37;
+            color: #ff6600;
+            font-weight: 700;
             margin: 40px 0;
             text-align: center;
             position: relative;
@@ -688,7 +701,7 @@
             width: 400px;
             height: 400px;
             z-index: -1;
-            opacity: 0.25;
+            opacity: 0.8;
             animation: rotateMandala 60s linear infinite;
         }
 
@@ -703,7 +716,6 @@
 
         /* Ceremony Timeline */
         .ceremony-section {
-            background: linear-gradient(to bottom, #fff9f0, #ffffff);
         }
 
         .timeline {
@@ -740,12 +752,14 @@
         }
 
         .timeline-content {
-            background: white;
+            background: rgba(250, 235, 215, 0.95);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.3);
             width: 45%;
             position: relative;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .timeline-date {
@@ -758,7 +772,7 @@
         .timeline-event {
             margin: 10px 0;
             padding: 10px;
-            background: #fff9f0;
+            background: rgba(245, 222, 179, 0.8);
             border-radius: 5px;
             position: relative;
         }
@@ -790,7 +804,6 @@
 
         /* Venue Section */
         .venue-section {
-            background: linear-gradient(to bottom, #fff9f0, #ffffff);
             position: relative;
             overflow: hidden;
         }
@@ -823,7 +836,6 @@
 
         /* Family Section */
         .family-section {
-            background: linear-gradient(to bottom, #fff9f0, #ffffff);
         }
 
         .family-grid {
@@ -833,11 +845,13 @@
         }
 
         .family-box {
-            background: white;
+            background: rgba(250, 235, 215, 0.95);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(139, 115, 85, 0.3);
             border-top: 4px solid #ff6600;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .family-box h4 {
@@ -855,7 +869,10 @@
 
         /* Footer */
         .footer {
-            background: linear-gradient(135deg, #ff9933, #ff6600);
+            background: url('images/border3.png');
+            background-size: auto;
+            background-repeat: repeat;
+            background-position: top left;
             color: white;
             padding: 40px 20px 50px;
             text-align: center;
@@ -921,7 +938,7 @@
                 visibility: hidden;
             }
 
-            /* Simplify hero border on mobile */
+            /* Simplify hero border on mobile and ensure background shows */
             .hero {
                 border: 8px solid transparent;
                 border-image: linear-gradient(135deg, #d4af37, #ff9933, #d4af37) 1;
@@ -929,6 +946,9 @@
                     inset 0 0 0 3px #f5f0e8,
                     inset 0 0 0 5px #d4af37,
                     inset 0 0 10px rgba(212, 175, 55, 0.15);
+                background-size: cover !important;
+                background-position: center !important;
+                background-attachment: scroll !important;
             }
 
             /* Adjust Ganesh frame for mobile */
@@ -2085,7 +2105,7 @@
                 <circle cx="150" cy="150" r="4" fill="#ff9933" opacity="0.7"/>
             </svg>
 
-            <div style="margin-top: 300px;"></div>
+            <div style="margin-top: 150px;"></div>
             <h1 data-aos="fade-up" data-aos-delay="600">विवाह निमंत्रण</h1>
             <div class="couple-names" data-aos="fade-up" data-aos-delay="800">
                 आयुष्मान विपुल कृष्ण<br>
@@ -2108,6 +2128,9 @@
         <div class="scroll-indicator"></div>
     </section>
 
+    <!-- Main Content Wrapper - Single Background -->
+    <div class="main-content-wrapper">
+    
     <!-- Countdown Section -->
     <section class="countdown-section">
         <h2 class="countdown-title" data-aos="fade-up">शादी तक बचे हैं</h2>
@@ -2235,9 +2258,9 @@
             </svg>
             
             <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                <span style="font-size: 1.2em; color: #d4af37;">❀</span>
+                <span style="font-size: 1.5em; color: #ff6600; font-weight: 700;">❀</span>
                 <span style="font-size: 1.1em;">॥ <span id="typed-parinay" style="display: inline-block; min-width: 180px;"></span> ॥</span>
-                <span style="font-size: 1.2em; color: #d4af37;">❀</span>
+                <span style="font-size: 1.5em; color: #ff6600; font-weight: 700;">❀</span>
             </div>
         </div>
     </section>
@@ -2404,18 +2427,27 @@
             </div>
         </div>
     </section>
+    
+    <!-- Closing Message Section (on main background) -->
+    <section class="section" style="padding: 40px 20px;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="background: linear-gradient(135deg, rgba(250, 235, 215, 0.95), rgba(245, 222, 179, 0.95)); padding: 25px 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(139, 115, 85, 0.3); backdrop-filter: blur(5px); border: 1px solid rgba(212, 175, 55, 0.3);" data-aos="fade-up">
+                <p style="font-size: 1.2em; line-height: 1.8; min-height: 120px; display: flex; align-items: center; justify-content: center; overflow: hidden; color: #5a4a3a; text-align: center;">
+                    <span id="typed-footer" style="max-width: 95%;"></span>
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    </div>
+    <!-- End Main Content Wrapper -->
 
     <!-- Footer -->
     <footer class="footer">
         <div style="max-width: 900px; margin: 0 auto;">
-            <div class="footer-message" data-aos="fade-up">
-                <p style="font-size: 1.3em; line-height: 2; height: 160px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                    <span id="typed-footer" style="text-align: center; max-width: 90%;"></span>
-                </p>
-            </div>
             
             <!-- Enhanced sender info box -->
-            <div style="margin-top: 30px; padding: 28px; background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1)); border-radius: 20px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.2);" data-aos="fade-up" data-aos-delay="200">
+            <div style="margin-top: 30px; padding: 28px; background: linear-gradient(135deg, #ff9933, #ff6600); border-radius: 20px; box-shadow: 0 10px 30px rgba(255, 102, 0, 0.3);" data-aos="fade-up" data-aos-delay="200">
                 <div style="border-bottom: 2px solid rgba(255,255,255,0.2); padding-bottom: 18px; margin-bottom: 18px;">
                     <p style="font-size: 1.3em;"><strong>✦ प्रेषक ✦</strong></p>
                 </div>
