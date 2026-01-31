@@ -2507,9 +2507,6 @@
     <!-- Typed.js Library -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     
-    <!-- Lottie.js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-
     <script>
         // Initialize AOS
         AOS.init({
@@ -2756,23 +2753,6 @@
         if (coupleSection) {
             coupleObserver.observe(coupleSection);
         }
-
-        // Initialize Lottie Cherry Blossom Animations
-        const lottieLeft = lottie.loadAnimation({
-            container: document.getElementById('lottie-floral-left'),
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: 'cherry_blossom.json'
-        });
-
-        const lottieRight = lottie.loadAnimation({
-            container: document.getElementById('lottie-floral-right'),
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: 'cherry_blossom.json'
-        });
 
         // Initialize Typed.js Professional Message (Hero)
         setTimeout(function() {
